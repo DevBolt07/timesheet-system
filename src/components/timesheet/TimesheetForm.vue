@@ -96,14 +96,14 @@ const submitForm = () => {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
 }
 
 .form-row {
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
 .half {
@@ -111,44 +111,55 @@ const submitForm = () => {
 }
 
 label {
-  font-weight: 500;
-  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
   color: var(--primary-color);
+  letter-spacing: 0.02em;
 }
 
 input, select, textarea {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
+  background-color: #fafafa;
+  transition: all 0.15s ease;
 }
 
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--accent-color);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
 .error-msg {
   color: #dc3545;
   margin-bottom: 15px;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .submit-btn {
   background-color: var(--accent-color);
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   width: 100%;
-  transition: background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.25);
+  margin-top: 10px;
+  transition: all 0.1s ease;
 }
 
-.submit-btn:hover {
-  background-color: #38a169;
+.submit-btn:hover:not(:disabled) {
+  background-color: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
 }
 
 .submit-btn:disabled {

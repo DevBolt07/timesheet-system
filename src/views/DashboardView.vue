@@ -49,24 +49,31 @@ const entriesToday = computed(() => {
 
 .metric-card {
   background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  border-left: 4px solid var(--accent-color);
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid var(--accent-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
 .metric-card h3 {
   font-size: 1.1rem;
   color: #64748b;
   margin-bottom: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .number {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
   color: var(--primary-color);
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  line-height: 1;
 }
 
 .metric-label {

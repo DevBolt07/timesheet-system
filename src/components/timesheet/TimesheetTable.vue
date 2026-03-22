@@ -6,6 +6,16 @@ defineProps({
     default: () => []
   }
 })
+
+const formatTime = (timeString) => {
+  if (!timeString) return '';
+  const [hours, minutes] = timeString.split(':');
+  let h = parseInt(hours, 10);
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12 || 12;
+  const paddedH = h.toString().padStart(2, '0');
+  return `${paddedH}:${minutes} ${ampm}`;
+}
 </script>
 
 <template>
@@ -26,7 +36,7 @@ defineProps({
         <tr v-for="entry in data" :key="entry.id" class="data-row">
           <td>{{ entry.date }}</td>
           <td><span class="badge">{{ entry.task }}</span></td>
-          <td>{{ entry.startTime }} - {{ entry.endTime }}</td>
+          <td>{{ formatTime(entry.startTime) }} - {{ formatTime(entry.endTime) }}</td>
           <td>{{ entry.description }}</td>
         </tr>
       </tbody>
@@ -49,7 +59,7 @@ defineProps({
 }
 
 th, td {
-  padding: 15px 20px;
+  padding: 18px 24px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
 }
@@ -63,24 +73,31 @@ th {
   letter-spacing: 0.05em;
 }
 
+.data-row {
+  transition: all 0.1s ease;
+}
+
 .data-row:hover {
-  background-color: #f8fafc;
-  transition: background-color 0.2s ease;
+  background-color: #f1f5f9;
+  transform: scale(1.001);
+  box-shadow: inset 3px 0 0 var(--accent-color);
 }
 
 .empty-state {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   color: #94a3b8;
   font-style: italic;
 }
 
 .badge {
-  background-color: #e2e8f0;
-  color: #475569;
-  padding: 4px 10px;
-  border-radius: 12px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 6px 12px;
+  border-radius: 20px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  display: inline-block;
 }
 </style>

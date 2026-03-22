@@ -43,6 +43,7 @@ import { RouterLink, RouterView } from 'vue-router'
 .brand h2 {
   font-size: 1.25rem;
   font-weight: 600;
+  color: #ffffff;
 }
 
 nav {
@@ -52,15 +53,25 @@ nav {
 }
 
 .nav-link {
-  padding: 15px 20px;
-  color: var(--sidebar-text);
+  padding: 16px 24px;
+  color: #cbd5e1;
   text-decoration: none;
-  transition: background-color 0.2s;
+  transition: all 0.15s ease;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
-.nav-link:hover, .router-link-active {
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding-left: 30px; 
+}
+
+.router-link-active {
   background-color: rgba(255, 255, 255, 0.1);
+  color: white;
   border-left: 4px solid var(--accent-color);
+  font-weight: 600;
 }
 
 .content {
